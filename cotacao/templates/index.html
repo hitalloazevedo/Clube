@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotação de Moedas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: rgb(141, 221, 231);
+        }
+
+        header {
+            background-color: rgb(190, 84, 252);
+            padding: 20px;
+            text-align: center;     
+        }
+
+        header > h1 {
+            color: white;
+        }
+
+        main {
+            background-color: rgba(255, 255, 255, 0.596);
+            padding: 20px;
+            height: 700px;
+            width: 500px;
+            margin: auto;
+            margin-top: 50px;
+            border-radius: 15px;
+            padding-top: 10px;
+            box-shadow: 1px 1px 2px rgba(34, 34, 34, 0.514);
+        }
+
+        main > p {
+            font-size: 2.8em;
+            padding: 10px;
+            color: rgb(61, 61, 61);
+        }
+
+        main > p.moeda {
+            text-align: center;
+        }
+
+        #info {
+            font-size: 1em;
+            margin-top: 290px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: rgb(190, 84, 252);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            height: 30px;
+        }
+
+        footer > p {
+            color: white;
+            font-size: 1.2em;
+            margin-top: 5px;
+        }
+
+        footer > p > a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+
+        <h1>Cotação de Moedas</h1>
+
+    </header>
+
+
+    <main>
+        <p class="title">Cotação em tempo real</p>
+        <p class="moeda">Dolar: R$ {{ usd }}</p>
+        <p class="moeda">Euro: R$ {{ eur }}</p>
+        <p class="moeda">Bitcoin: R$ {{ btc }}</p>
+        <p class="moeda">Libra est.: R$ {{ gbp }}</p>
+
+        <p id="info">Informações fornecidas por https://docs.awesomeapi.com.br/</p>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Alunos do Clube.</p>
+    </footer>
+</body>
+</html>
