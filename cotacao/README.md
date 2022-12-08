@@ -7,7 +7,7 @@
 - ``APIS``
 
 # Modo de usar
-## É necessário a instalação prévia da linguagem python
+## É necessário a instalação prévia da linguagem python https://www.python.org/
 ### Usuários Windows
 ~~~python
 git clone https://github.com/hitalloazevedo/Clube
