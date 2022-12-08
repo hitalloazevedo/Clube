@@ -13,7 +13,6 @@ def pegar_cotacao(moeda:str):
     preco = str(response_json[f'{moeda}BRL']['bid'])
     preco = f'{preco:.4}'.replace('.', ',')
 
-    
     return preco
 
 
@@ -21,23 +20,33 @@ def pegar_cotacao_btc():
     response = requests.get(url.format('btc'))
     response_json = response.json()
     preco = str(response_json[f'BTCBRL']['bid'])
+    preco = float(preco)
+    preco = f'{preco:.3f}'
     preco = preco.replace('.', ',')
-    
+
     return preco
 
+
+def date():
+    req = requests.get('https://economia.awesomeapi.com.br/last/usd')
+
+    date = req.json()['USDBRL']['create_date']
+    
+    return date
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def index():
-
     usd = pegar_cotacao('usd')
     eur = pegar_cotacao('eur')
     gbp = pegar_cotacao('gbp')
     btc = pegar_cotacao_btc()
 
-    return render_template('index.html', usd=usd, eur=eur, gbp=gbp, btc=btc)
+    data = date()
+
+    return render_template('index.html', usd=usd, eur=eur, gbp=gbp, btc=btc, date=data)
 
 
 if __name__ == '__main__':
